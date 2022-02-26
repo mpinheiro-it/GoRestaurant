@@ -9,7 +9,7 @@ import { IconType } from 'react-icons';
 interface InputProps{
   name: string,
   placeholder: string,
-  icon: IconType
+  icon?: IconType
 }
 
 
