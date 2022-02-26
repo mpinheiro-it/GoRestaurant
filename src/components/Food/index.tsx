@@ -1,43 +1,32 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { Container } from './styles';
 import api from '../../services/api';
 
-interface FoodProps {
-    key: number,
-    food: {
-      id: number,
-      name: string,
-      description: string,
-      price: string,
-      available: boolean,
-      image: string
-    },
-    handleDelete: (id: number) => void,
-    handleEditFood: () => void
+export type FoodType = {
+  id: number,
+  name: string,
+  description: string,
+  price: string,
+  available: boolean,
+  image: string
 }
 
-function Food({key, food, handleDelete, handleEditFood}: FoodProps) {
-  
-  const [isAvailable, setIsAvailable]  = useState(true)
-  
-  // constructor(props) {
-  //   super(props);
+interface FoodProps {    
+    food: FoodType,
+    handleDelete: (id: number) => void,
+    handleEditFood: (food: FoodType) => void
+}
 
-  //   const { available } = this.props.food;
-  //   this.state = {
-  //     isAvailable: available
-  //   };
-  // }
+function Food({food, handleDelete, handleEditFood}: FoodProps) {
+ 
+  const { available } = food;
 
+  const [isAvailable, setIsAvailable]  = useState(available);
 
   
-  // const toggleAvailable = async () => {
-  //   const { food } = this.props;
-  //   const { isAvailable } = this.state;
-
-  const addFood = async () => {
+  async function toggleAvailable(){    
 
     await api.put(`/foods/${food.id}`, {
       ...food,
@@ -50,7 +39,7 @@ function Food({key, food, handleDelete, handleEditFood}: FoodProps) {
 
 function setEditingFood() {
   //const { food, handleEditFood } = this.props;
-  handleEditFood()
+  handleEditFood(food)
   }
   
 
@@ -95,7 +84,7 @@ function setEditingFood() {
                 id={`available-switch-${food.id}`}
                 type="checkbox"
                 checked={isAvailable}
-                onChange={addFood}
+                onChange={toggleAvailable}
                 data-testid={`change-status-food-${food.id}`}
               />
               <span className="slider" />

@@ -1,13 +1,15 @@
-import { Component } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 
 interface ModalProps{
   isOpen: boolean, 
   setIsOpen: () => void,
+  children: ReactNode
 }
 
 
-function Modal({ isOpen, setIsOpen }: ModalProps) {
+function Modal({ isOpen, setIsOpen, children }: ModalProps) {
+  const [modalStatus, setModalStatus] = useState(isOpen);
 
     // componentDidUpdate(prevProps) {   
 
@@ -16,10 +18,10 @@ function Modal({ isOpen, setIsOpen }: ModalProps) {
   //     this.setState({ modalStatus: isOpen })
   //   }
   // }
+  useEffect(() => {
+    setModalStatus(isOpen);
+  }, [isOpen]);
 
-  
-    //const { children, setIsOpen } = this.props;
-    //const { modalStatus } = this.state;
 
     return (
       <ReactModal
@@ -46,7 +48,7 @@ function Modal({ isOpen, setIsOpen }: ModalProps) {
           },
         }}
       >
-        {/* {children} */}
+        {children}
       </ReactModal>
     );
   }
