@@ -1,5 +1,7 @@
 # GoRestaurant :pizza:
 
+<img src="https://github.com/mpinheiro-it/GoRestaurant/blob/master/GoRestaurant.jpg" width="600">
+
 Migrating a React application from Javascript and Class Components to Typescript and Function Components.
 
 GoRestaurant is a web application for registering different types of dishes in a virtual menu.
@@ -17,3 +19,5 @@ GoRestaurant is a web application for registering different types of dishes in a
 - Run the application locally with yarn start or npm start
 - Run the fake API with yarn server or npm run server
 - Open the application in your browser at localhost:3000/
+
+
