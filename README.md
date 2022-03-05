@@ -16,7 +16,7 @@ GoRestaurant is a web application for registering different types of dishes in a
 - All dishes should be rendered into the screen in a centralized grid
 
 ## Installation
-- Clone this repository: git clone https://github.com/caioharuo/gorestaurant.git
+- Clone this repository: git clone https://github.com/mpinheiro-it/GoRestaurant.git
 - Install dependencies with yarn or npm install
 - Run the application locally with yarn start or npm start
 - Run the fake API with yarn server or npm run server
