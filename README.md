@@ -2,11 +2,9 @@
 
 <img src="https://github.com/mpinheiro-it/GoRestaurant/blob/master/GoRestaurant.jpg" width="600">
 
-GoRestaurant is a web application for registering different types of dishes in a virtual menu. It uses a fake API that servers a JSON with the menu.
+GoRestaurant is a web application for registering different types of dishes in a virtual menu. It uses a fake API to get the menu data.
 
 This was a good exercise for migrating a React application from Javascript and Class Components to Typescript and Function Components.
-
-GoRestaurant is a web application for registering different types of dishes in a virtual menu.
 
 ## User Stories
 - The user can add a new dish
